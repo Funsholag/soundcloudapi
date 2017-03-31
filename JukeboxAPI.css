@@ -1,0 +1,103 @@
+h1 {
+  text-align: center;
+  font-family: 'Baloo Bhaina', cursive;
+  color: aliceblue;
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem;
+}
+
+video {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background: url("/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Coffee-Place/MP4/Coffee-Place.mp4");
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+
+
+@media (min-width: 400px) {
+  body {
+    background-color: ivory;
+  }
+}
+
+@media (min-width: 550px) {
+  body {
+    background-color: ivory;
+  }
+}
+
+@media (min-width: 750px) {
+  body{
+    background-color: ivory;
+  }
+}
+
+@media (min-width: 1000px) {
+  body {
+    background-color: ivory;
+  }
+}
+@media screen and (max-width: 500px) {
+  div{width:70%;}
+}
+@media screen and (max-device-width: 800px) {
+  html {background: url("/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/Jukebox/Coffee-Place/MP4/Coffee-Place.mp4") #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
+}
+
+
+.Symbols {
+  text-align: center;
+  padding-top: 400px;
+}
+
+
+/*.Symbols {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background:rgba(0,0,0,0.5);
+  padding: .5rem;
+  transition: .6s background;
+}
+.symbols:hover{
+  background:rgba(0,0,0,0.9);
+}*/
+
+#Controls {
+  font-size: 1.5em;
+  margin-left: 15em;
+  margin-right: 15em;
+}
+
+
+#previous {
+  margin-right: 2em;
+}
+#pause{
+  margin-right: 2em;
+}
+#play{
+  margin-right: 2em;
+}
+#stop{
+  margin-right: 2em;
+}
+#next{
+  margin-right: 2em;
+}
+
+.trackinfo {
+  text-align: center;
+}

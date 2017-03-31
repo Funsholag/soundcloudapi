@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="JukeboxAPI.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://use.fontawesome.com/37253272d1.js"></script>
+    <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Funsho's JukeBox</h1>
+    <video poster="/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/JavascriptAPI/Coffee-Place/MP4/Coffee-Place.mp4" id="bgvid" playsinline autoplay muted loop>
+
+    <source src="/Users/olufunshoolagundoye/Desktop/NYCDA/JavascriptBasics/JavascriptAPI/Coffee-Place/MP4/Coffee-Place.mp4" type="video/mp4">
+    </video>
+
+
+
+    <div class="Symbols">
+      <div id="Controls">
+        <a href="#" id="previous"><i class="fa fa-backward" aria-hidden="true"></i></a>
+        <a href="#" id="pause"><i class="fa fa-pause" aria-hidden="true"></i></a>
+        <a href="#" id="play"><i class="fa fa-play" aria-hidden="true"></i></a>
+        <a href="#" id="stop"><i class="fa fa-stop" aria-hidden="true"></i></a>
+        <a href="#" id="next"><i class="fa fa-forward" aria-hidden="true"></i></a>
+      </div>
+
+      <div class="TrackInfo">
+        <h2> About this track: </h2>
+        <div id="albumpic"></div>
+        <div id="ShowArtist"> </div>
+        <div id="linktoartist"> </div>
+        <div id="ShowMusicTitle"> </div>
+        <div id="linktosong"> </div>
+        <div id="descriptionplace"> </div>
+        <div id="genre"> </div>
+        <div id="releasedate"> </div>
+
+      <form action="JukeboxAPI.html" method="post">
+        <input id="artistfield" type="text" name="" value="" placeholder="Artist">
+        <input id="titlefield" type="text" name="" value="" placeholder="Title">
+        <button id="newsong" type="button" name="button">Choose a Song in the Playlist</button>
+      </form>
+      </div>
+  </div>
+
+    </div>
+      <script type="text/javascript" src="JukeboxAPI.js"></script>
+  </body>
+</html>
