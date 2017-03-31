@@ -62,7 +62,16 @@ video {
   padding-top: 400px;
 }
 
-
+.TrackInfo {
+  background: goldenrod;
+  padding: 0px 1px;
+  border-style: ridge;;
+  font: 16px sans-serif;
+  line-height: 1.5;
+  margin: .5em;
+  margin-left: 20em;
+  margin-right: 20em;
+}
 /*.Symbols {
   display: inline-block;
   color: #fff;
