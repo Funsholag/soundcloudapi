@@ -1,3 +1,56 @@
+
+// var play=document.querySelector("#play")
+// var pause=document.querySelector("#pause")
+// var cover=document.querySelector("#albumpic")
+// var titleGo = document.querySelector('#ShowMusicTitle')
+// var artistGo = document.querySelector('#ShowArtist')
+//
+//
+// SC.initialize({ client_id: 'fd4e76fc67798bfa742089ed619084a6'
+// });
+//
+// SC.get("/tracks/99444696").then(function(response) {console.log(response);
+// });
+//
+// function Jukebox(){
+//  this.player = SC.stream("/tracks/99444696")
+// }
+//
+// var jukebox = new Jukebox()
+//
+// Jukebox.prototype.play=function(){
+//    this.player.then(function(player){
+//      player.play();
+//   })
+// }
+//
+// Jukebox.prototype.pause=function(){
+//    this.player.then(function(player){
+//      player.pause();
+//    })
+//   }
+//
+//
+// play.addEventListener("click", function(event){
+//  event.preventDefault();
+//  jukebox.play()
+//  SC.get("/tracks/99444696").then(function(response){
+//    titleGo.innerHTML = response.title;
+//    titleGo.setAttribute("href", response.permalink_url);
+//    artistGo.innerHTML = response.user.username;
+//    artistGo.setAttribute("href", response.user.permalink_url);
+//    document.getElementById("genre").innerHTML = "Genre: " + response.genre;
+//    document.getElementById("albumpic").src = response.artwork_url;
+//    document.getElementById("releasedate").innerHTML = "Date Added: " + response.created_at;
+//    document.getElementById("descriptionplace").innerHTML = "Description: " + response.description;
+//   // console.log(response);
+//  });
+// })
+//
+// pause.addEventListener("click", function(event){
+//  event.preventDefault();
+//  jukebox.pause()
+// })
 SC.initialize({
   client_id: 'fd4e76fc67798bfa742089ed619084a6'
 });
@@ -31,7 +84,7 @@ SC.resolve("https://soundcloud.com/asapferg/shabba-feat-a-ap-rocky-dirty").then(
 function Jukebox(songs){
   this.songs= songs
 
-  SC.get("/tracks/99444696").then(function(response){
+  SC.resolve("https://soundcloud.com/asapferg/shabba-feat-a-ap-rocky-dirty").then(function(response){
     var album = response.artwork_url
     var img = document.createElement('img')
     img.src = album
@@ -62,42 +115,9 @@ function Jukebox(songs){
     ReleaseDate.innerHTML = "Release Date: " + month + "/" + day + "/" + year
     console.log(response);
   });
-// SC.resolve("https://soundcloud.com/asapferg/shabba-feat-a-ap-rocky-dirty").then(function(response) {
-//   var album = response.artwork_url
-//   var img = document.createElement('img')
-//   img.src = album
-//   albumPic.appendChild(img)
-//   var title = response.title
-//   MusicTitle.innerHTML = "Title: " + title
-//   var titlelink = response.permalink_url
-//   var a = document.createElement('a')
-//   a.setAttribute('href', titlelink)
-//   a.setAttribute('target', '_blank')
-//   a.innerHTML = "link to track"
-//   linkToSong.appendChild(a)
-//   var artist = response.user.username
-//   ArtistName.innerHTML = "Artist: " + artist
-//   var artistlink = response.user.permalink_url
-//   var anchor = document.createElement('a')
-//   anchor.setAttribute('href', artistlink)
-//   anchor.setAttribute('target', '_blank')
-//   anchor.innerHTML = "link to artist page"
-//   linkToArtist.appendChild(anchor)
-//   var description = response.description
-//   descriptionPlace.innerHTML = "Description: " + description
-//   var genre = response.genre
-//   GenrePos.innerHTML = "Genre: " + genre
-//   var month = response.release_month
-//   var day = response.release_day
-//   var year = response.release_year
-//   ReleaseDate.innerHTML = "Release Date: " + month + "/" + day + "/" + year
-// })
 
 }
 
-// SC.stream('track').then(function(player){
-//   this.player.play();
-// });
 
 
 Jukebox.prototype.play = function() {
@@ -126,7 +146,7 @@ playIcon.addEventListener("click", function(event){
   jukebox.play()
   playIcon.style.color = "#FF1493"
   pauseIcon.style.color = "#000000"
-  })
+})
 
 pauseIcon.addEventListener("click", function(event){
   event.preventDefault()

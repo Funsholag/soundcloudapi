@@ -23,8 +23,6 @@ video {
   transition: 1s opacity;
 }
 
-
-
 @media (min-width: 400px) {
   body {
     background-color: ivory;
@@ -62,6 +60,7 @@ video {
   padding-top: 400px;
 }
 
+
 .TrackInfo {
   background: goldenrod;
   padding: 0px 1px;
@@ -90,6 +89,9 @@ video {
   margin-right: 15em;
 }
 
+i:hover {
+  color: #ff4f5a;
+}
 
 #previous {
   margin-right: 2em;
@@ -107,6 +109,14 @@ video {
   margin-right: 2em;
 }
 
-.trackinfo {
+/*.trackinfo {
   text-align: center;
-}
+  background: goldenrod;
+  padding: 0px 1px;
+  border-style: ridge;;
+  font: 16px sans-serif;
+  line-height: 1.5;
+  margin: .5em;
+  margin-left: 20em;
+  margin-right: 20em;
+}*/
