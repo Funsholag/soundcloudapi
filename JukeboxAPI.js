@@ -1,59 +1,4 @@
-
-// var play=document.querySelector("#play")
-// var pause=document.querySelector("#pause")
-// var cover=document.querySelector("#albumpic")
-// var titleGo = document.querySelector('#ShowMusicTitle')
-// var artistGo = document.querySelector('#ShowArtist')
-//
-//
-// SC.initialize({ client_id: 'fd4e76fc67798bfa742089ed619084a6'
-// });
-//
-// SC.get("/tracks/99444696").then(function(response) {console.log(response);
-// });
-//
-// function Jukebox(){
-//  this.player = SC.stream("/tracks/99444696")
-// }
-//
-// var jukebox = new Jukebox()
-//
-// Jukebox.prototype.play=function(){
-//    this.player.then(function(player){
-//      player.play();
-//   })
-// }
-//
-// Jukebox.prototype.pause=function(){
-//    this.player.then(function(player){
-//      player.pause();
-//    })
-//   }
-//
-//
-// play.addEventListener("click", function(event){
-//  event.preventDefault();
-//  jukebox.play()
-//  SC.get("/tracks/99444696").then(function(response){
-//    titleGo.innerHTML = response.title;
-//    titleGo.setAttribute("href", response.permalink_url);
-//    artistGo.innerHTML = response.user.username;
-//    artistGo.setAttribute("href", response.user.permalink_url);
-//    document.getElementById("genre").innerHTML = "Genre: " + response.genre;
-//    document.getElementById("albumpic").src = response.artwork_url;
-//    document.getElementById("releasedate").innerHTML = "Date Added: " + response.created_at;
-//    document.getElementById("descriptionplace").innerHTML = "Description: " + response.description;
-//   // console.log(response);
-//  });
-// })
-//
-// pause.addEventListener("click", function(event){
-//  event.preventDefault();
-//  jukebox.pause()
-// })
-SC.initialize({
-  client_id: 'fd4e76fc67798bfa742089ed619084a6'
-});
+SC.initialize({client_id: 'QcfpeasymrnTbJJoanZ9kjWdzHZjfzXW'});
 
 
 var vid = document.getElementById("bgvid");
@@ -74,17 +19,17 @@ var linkToSong = document.querySelector("#linktosong")
 var descriptionPlace = document.querySelector("#descriptionplace")
 var GenrePos = document.querySelector("#genrepos")
 var ReleaseDate = document.querySelector("#releasedate")
-var trackID = [99444696]
+var trackID = [271223883]
 var soundsong= SC.stream('/tracks/' + trackID[index])
 
-SC.resolve("https://soundcloud.com/asapferg/shabba-feat-a-ap-rocky-dirty").then(function(response) {
-  console.log(response);
+SC.resolve("https://soundcloud.com/aapferg/shabba-1").then(function(response) {
+  console.log("Hey");
 });
 
 function Jukebox(songs){
   this.songs= songs
 
-  SC.resolve("https://soundcloud.com/asapferg/shabba-feat-a-ap-rocky-dirty").then(function(response){
+  SC.resolve("https://soundcloud.com/aapferg/shabba-1").then(function(response){
     var album = response.artwork_url
     var img = document.createElement('img')
     img.src = album
@@ -144,13 +89,13 @@ var jukebox = new Jukebox(songs);
 playIcon.addEventListener("click", function(event){
   event.preventDefault()
   jukebox.play()
-  playIcon.style.color = "#FF1493"
-  pauseIcon.style.color = "#000000"
+  playIcon.style.color = "#ff4f5a"
+  pauseIcon.style.color = "#2d2d2d"
 })
 
 pauseIcon.addEventListener("click", function(event){
   event.preventDefault()
   jukebox.pause()
-  pauseIcon.style.color = "#FF1493"
-  playIcon.style.color = "#000000"
+  pauseIcon.style.color = "#ff4f5a"
+  playIcon.style.color = "#2d2d2d"
 })
