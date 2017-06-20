@@ -3,7 +3,7 @@
 *This is an app intended to test to see what I can do with soundcloud's api*
 
 Features:
-<li>Play, pause, stop, fast forward, and rewind</li>
+<li>Play, pause, stop, fast forward, and rewind music</li>
 
 See it deployed at:
 
