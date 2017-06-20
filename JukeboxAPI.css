@@ -71,17 +71,18 @@ video {
   margin-left: 20em;
   margin-right: 20em;
 }
-/*.Symbols {
+.Symbols {
   display: inline-block;
   color: #fff;
   text-decoration: none;
   background:rgba(0,0,0,0.5);
   padding: .5rem;
+  margin-left: 7em;
   transition: .6s background;
 }
 .symbols:hover{
   background:rgba(0,0,0,0.9);
-}*/
+}
 
 #Controls {
   font-size: 1.5em;

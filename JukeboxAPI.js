@@ -5,7 +5,6 @@ var vid = document.getElementById("bgvid");
 
 var playIcon = document.getElementById("play")
 var pauseIcon = document.getElementById("pause")
-var stopIcon = document.getElementById("stop")
 var nextIcon = document.getElementById("next")
 var prevIcon = document.getElementById("previous")
 var albumPic = document.querySelector("#albumpic")
@@ -17,19 +16,21 @@ var linkToArtist = document.querySelector("#linktoartist")
 var MusicTitle = document.querySelector("#ShowMusicTitle")
 var linkToSong = document.querySelector("#linktosong")
 var descriptionPlace = document.querySelector("#descriptionplace")
-var GenrePos = document.querySelector("#genrepos")
+var GenrePos = document.querySelector("#genre")
 var ReleaseDate = document.querySelector("#releasedate")
-var trackID = [271223883]
-var soundsong= SC.stream('/tracks/' + trackID[index])
+// var trackID = [271223883]
+var playlist = [317184390]
+// var soundsong= SC.stream('/tracks/' + trackID[index])
+var soundsong= SC.stream('/playlists/' + playlist[index])
 
-SC.resolve("https://soundcloud.com/aapferg/shabba-1").then(function(response) {
+SC.resolve("https://api.soundcloud.com/playlists/317184390").then(function(response) {
   console.log("Hey");
 });
 
 function Jukebox(songs){
   this.songs= songs
 
-  SC.resolve("https://soundcloud.com/aapferg/shabba-1").then(function(response){
+  SC.resolve("https://api.soundcloud.com/playlists/317184390").then(function(response){
     var album = response.artwork_url
     var img = document.createElement('img')
     img.src = album
@@ -84,6 +85,14 @@ Jukebox.prototype.pause = function() {
   })
 }
 
+Jukebox.prototype.skip = function() {
+  soundsong.then(function(player){
+    player.next();
+  })
+}
+
+
+
 var jukebox = new Jukebox(songs);
 
 playIcon.addEventListener("click", function(event){
@@ -98,4 +107,24 @@ pauseIcon.addEventListener("click", function(event){
   jukebox.pause()
   pauseIcon.style.color = "#ff4f5a"
   playIcon.style.color = "#2d2d2d"
+})
+
+nextIcon.addEventListener("click", function(event){
+  event.preventDefault()
+  jukebox.skip()
+  ShowMusicTitle.innerHTML = titles[index]
+  ShowArtist.innerHTML = artists[index]
+  playIcon.style.color = "#FF1493"
+  pauseIcon.style.color = "#000000"
+  stopIcon.style.color = "#000000"
+})
+
+prevIcon.addEventListener("click", function(event){
+  event.preventDefault()
+  jukebox.back()
+  ShowMusicTitle.innerHTML = titles[index]
+  ShowArtist.innerHTML = artists[index]
+  playIcon.style.color = "#FF1493"
+  pauseIcon.style.color = "#000000"
+  stopIcon.style.color = "#000000"
 })
