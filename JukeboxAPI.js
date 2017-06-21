@@ -1,24 +1,22 @@
+
 SC.initialize({client_id: 'QcfpeasymrnTbJJoanZ9kjWdzHZjfzXW'});
-
-
-var vid = document.getElementById("bgvid");
 
 var playIcon = document.getElementById("play")
 var pauseIcon = document.getElementById("pause")
 var nextIcon = document.getElementById("next")
 var prevIcon = document.getElementById("previous")
 var albumPic = document.querySelector("#albumpic")
-
-var index = [0]
-var songs = []
 var ArtistName = document.querySelector("#ShowArtist")
 var linkToArtist = document.querySelector("#linktoartist")
 var MusicTitle = document.querySelector("#ShowMusicTitle")
+var SongTitle = document.querySelector("#ShowSongTitle")
 var linkToSong = document.querySelector("#linktosong")
 var descriptionPlace = document.querySelector("#descriptionplace")
 var GenrePos = document.querySelector("#genre")
 var ReleaseDate = document.querySelector("#releasedate")
 // var trackID = [271223883]
+var index = [0]
+var songs = []
 var playlist = [317184390]
 // var soundsong= SC.stream('/tracks/' + trackID[index])
 var soundsong= SC.stream('/playlists/' + playlist[index])
@@ -36,7 +34,9 @@ function Jukebox(songs){
     img.src = album
     albumPic.appendChild(img)
     var title = response.title
-    MusicTitle.innerHTML = "Title: " + title
+    MusicTitle.innerHTML = "Album Title: " + title
+    var trackTitle = response.tracktitle
+    SongTitle.innerHTML = "Track: " + trackTitle
     var titlelink = response.permalink_url
     var a = document.createElement('a')
     a.setAttribute('href', titlelink)
@@ -51,10 +51,10 @@ function Jukebox(songs){
     anchor.setAttribute('target', '_blank')
     anchor.innerHTML = "link to artist page"
     linkToArtist.appendChild(anchor)
-    var description = response.description
-    descriptionPlace.innerHTML = "Description: " + description
+    // var description = response.description
+    // descriptionPlace.innerHTML = "Description: " + description
     var genre = response.genre
-    GenrePos.innerHTML = "Genre: " + genre
+    GenrePos.innerHTML = "Genre: " + genre + "/" + genre
     var month = response.release_month
     var day = response.release_day
     var year = response.release_year
@@ -63,9 +63,9 @@ function Jukebox(songs){
   });
 
 }
-
-
-
+//instantiation: jukebox object created, songs pushed into jukebox array
+var jukebox = new Jukebox(songs);
+// Jukebox object methods
 Jukebox.prototype.play = function() {
   soundsong.then(function(player){
     player.play()
@@ -91,10 +91,7 @@ Jukebox.prototype.skip = function() {
   })
 }
 
-
-
-var jukebox = new Jukebox(songs);
-
+// button event listeners
 playIcon.addEventListener("click", function(event){
   event.preventDefault()
   jukebox.play()

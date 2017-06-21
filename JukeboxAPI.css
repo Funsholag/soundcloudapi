@@ -20,9 +20,74 @@ video {
   transform: translateX(-50%) translateY(-50%);
   background: url("Coffee-Place/MP4/Coffee-Place.mp4");
   background-size: cover;
-  transition: 1s opacity;
+  /*transition: 1s opacity;*/
 }
 
+/*#grow {
+    -moz-transition: height .5s;
+    -ms-transition: height .5s;
+    -o-transition: height .5s;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    height: 0;
+    overflow: hidden;
+  }*/
+.Symbols {
+  text-align: center;
+  padding-top: 400px;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  padding: .5rem;
+  margin-left: 12.5em;
+  transition-duration: 1s;
+}
+
+.Symbols-active{
+  background-color: #45CEE0;
+}
+.Symbols:hover{
+  background:rgba(0,0,0,0.4);
+}
+
+.TrackInfo {
+  background: goldenrod;
+  padding: 0px 1px;
+  border-style: ridge;
+  font: 16px sans-serif;
+  line-height: 1.5;
+  margin: .5em;
+  margin-left: 10em;
+  margin-right: 10em;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+
+}
+.TrackInfo:hover{
+  transform: rotateY(180deg);
+}
+#Controls {
+  font-size: 1.5em;
+  margin-left: 12em;
+  margin-right: 12em;
+}
+
+i:hover {
+  color: #ff4f5a;
+}
+
+#previous {
+  margin-right: 2em;
+}
+#pause{
+  margin-right: 2em;
+}
+#play{
+  margin-right: 2em;
+}
+#next{
+  margin-right: 2em;
+}
 @media (min-width: 400px) {
   body {
     background-color: ivory;
@@ -53,71 +118,3 @@ video {
   html {background: url("Coffee-Place/MP4/Coffee-Place.mp4") #000 no-repeat center center fixed; }
   #bgvid { display: none; }
 }
-
-
-.Symbols {
-  text-align: center;
-  padding-top: 400px;
-}
-
-
-.TrackInfo {
-  background: goldenrod;
-  padding: 0px 1px;
-  border-style: ridge;;
-  font: 16px sans-serif;
-  line-height: 1.5;
-  margin: .5em;
-  margin-left: 20em;
-  margin-right: 20em;
-}
-.Symbols {
-  display: inline-block;
-  color: #fff;
-  text-decoration: none;
-  background:rgba(0,0,0,0.5);
-  padding: .5rem;
-  margin-left: 7em;
-  transition: .6s background;
-}
-.symbols:hover{
-  background:rgba(0,0,0,0.9);
-}
-
-#Controls {
-  font-size: 1.5em;
-  margin-left: 15em;
-  margin-right: 15em;
-}
-
-i:hover {
-  color: #ff4f5a;
-}
-
-#previous {
-  margin-right: 2em;
-}
-#pause{
-  margin-right: 2em;
-}
-#play{
-  margin-right: 2em;
-}
-#stop{
-  margin-right: 2em;
-}
-#next{
-  margin-right: 2em;
-}
-
-/*.trackinfo {
-  text-align: center;
-  background: goldenrod;
-  padding: 0px 1px;
-  border-style: ridge;;
-  font: 16px sans-serif;
-  line-height: 1.5;
-  margin: .5em;
-  margin-left: 20em;
-  margin-right: 20em;
-}*/
